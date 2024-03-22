@@ -1,4 +1,4 @@
-/*!40101 SET NAMES utf8 */;
+
 
 INSERT INTO `users`
     (`lastName`, `firstName`, `email`, `phone`, `password`, `role`)
