@@ -103,6 +103,7 @@ VALUES
     ("Un super commentaire 7", '2024-03-07', 2, 3),    
     ("Un super commentaire 8", '2024-03-08', 2, 1),    
     ("Un super commentaire 9", '2024-03-09', 2, 1),
+    ("Un super commentaire 9", '2024-03-09', 2, 4),
     ("Un super commentaire 10", '2024-03-10', 2, 2);  
 
 INSERT INTO tags

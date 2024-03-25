@@ -22,3 +22,5 @@ $options = array(
 // Pagination par défaut
 define('NB_PAGINATE', 10);
 
+// Nom du site
+define('SITE_NAME', 'Un joli surf blog');
