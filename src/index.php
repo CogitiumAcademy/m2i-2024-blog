@@ -2,6 +2,9 @@
 
 require 'config/param.inc.php';
 
+require 'sql/pdoConnect.inc.php';
+$pdo = pdoConnect();
+
 $page = DEFAULT_PAGE;
 
 if (isset($_GET['page'])) {
