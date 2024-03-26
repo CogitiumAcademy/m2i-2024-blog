@@ -10,7 +10,7 @@
                     
                     <!-- Post preview-->
                     <div class="post-preview">
-                        <a href="?page=post">
+                        <a href="?page=post&slug=<?= $post['postSlug'] ?>">
                             <h2 class="post-title"><?= $post['title'] ?></h2>
                             <img class="w-100" src="<?= $post['image'] ?>" alt="">
                             <h3 class="post-subtitle"><?= $post['content'] ?>...</h3>

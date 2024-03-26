@@ -5,8 +5,10 @@ define('DEFAULT_PAGE', 'home');
 
 // Valeurs par défaut du layout
 $layoutTitle = 'Un super blog de Surf';
-$layoutImage = 'home-bg.jpg';
+$layoutImage = 'public/clean/assets/img/home-bg.jpg';
 $layoutDescription = '';
+$headerTitle = '';
+$headerSubheading = '';
 
 // Config BD MySQL
 define( 'DB_HOST', 'localhost' );
@@ -23,4 +25,5 @@ $options = array(
 define('NB_PAGINATE', 10);
 
 // Nom du site
-define('SITE_NAME', 'Un joli surf blog');
+define('SITE_NAME', 'SurfBlog');
+define('SITE_SLOGAN', 'Le meilleur blog du monde !');

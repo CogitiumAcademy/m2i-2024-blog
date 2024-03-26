@@ -15,7 +15,7 @@ FROM posts A
 INNER JOIN categories B ON A.id_categories = B.id
 INNER JOIN users C ON id_users = C.id
 WHERE active = TRUE
-	AND A.id = 2;
+	AND A.slug = "comment-entretenir-sa-planche-de-surf";
 
 /* Les commentaires de la page détail */
 SELECT firstName, lastName, content, createdAt 

@@ -47,6 +47,7 @@ CREATE TABLE posts(
         active        Bool NOT NULL ,
         id_users      Int NOT NULL ,
         id_categories Int NOT NULL
+        ,CONSTRAINT posts_AK UNIQUE (slug)
 	,CONSTRAINT posts_PK PRIMARY KEY (id)
 )ENGINE=InnoDB;
 
