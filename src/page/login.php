@@ -6,6 +6,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user = loginUser($_POST['email']);
     //var_dump($user); exit;
     if (password_verify($_POST['password'], $user['password'])) {
+        //session_start();
+        $_SESSION['user'] = $user;
+        //var_dump($_SESSION); exit;
         //die('OK');
         header('Location: index.php');
         exit;

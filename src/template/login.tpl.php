@@ -16,7 +16,7 @@
                                 </div>
                                 
                                 <div class="form-floating">
-                                    <input name="password" class="form-control" id="name" type="text" placeholder="Entrez votre mot de passe...">
+                                    <input name="password" class="form-control" id="name" type="password" placeholder="Entrez votre mot de passe...">
                                     <label for="name">Mot de passe</label>
                                 </div>
                                 <br />

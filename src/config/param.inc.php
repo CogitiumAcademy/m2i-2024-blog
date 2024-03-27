@@ -5,7 +5,7 @@ define('DEFAULT_PAGE', 'home');
 
 // Valeurs par défaut du layout
 $layoutTitle = 'Un super blog de Surf';
-$layoutImage = 'public/clean/assets/img/home-bg.jpg';
+$layoutImage = 'public/clean/assets/img/header-bg.jpg';
 $layoutDescription = '';
 $headerTitle = '';
 $headerSubheading = '';
