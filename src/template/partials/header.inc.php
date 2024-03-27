@@ -51,6 +51,12 @@
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
+                        <!--
+                        <div class="alert alert-success" role="alert">
+                            A simple success alert—check it out!
+                        </div>
+                        -->
+                        <?= get_flash_message('blog') ?>
                         <div class="site-heading">
                             <h1><?= $headerTitle ?></h1>
                             <span class="subheading"><?= $headerSubheading ?></span>

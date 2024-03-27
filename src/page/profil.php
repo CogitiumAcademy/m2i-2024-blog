@@ -10,6 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $_SESSION['user']['firstName'] = $_POST['firstName'];
     $_SESSION['user']['lastName'] = $_POST['lastName'];
 
+    set_flash_message('blog', 'Votre profil a été mis à jour !','success');
     // On redirige vers la page profil
     header('Location: index.php?page=profil');
     exit;

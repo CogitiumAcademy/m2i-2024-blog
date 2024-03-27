@@ -11,6 +11,7 @@ $pdo = pdoConnect();
 
 // Chargement des librairies
 require 'lib/pluralize.lib.php';
+require 'lib/flash.lib.php';
 
 // Router
 $page = DEFAULT_PAGE;
