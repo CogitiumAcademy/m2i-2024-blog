@@ -1,6 +1,8 @@
 <?php
 require 'sql/user.sql.php';
 
+Granted();
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // On update le user dans la BD avec les infos du form

@@ -10,6 +10,7 @@ require 'sql/pdoConnect.inc.php';
 $pdo = pdoConnect();
 
 // Chargement des librairies
+require 'core/core.inc.php';
 require 'lib/pluralize.lib.php';
 require 'lib/flash.lib.php';
 
