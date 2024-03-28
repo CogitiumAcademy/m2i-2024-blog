@@ -3,9 +3,9 @@
 INSERT INTO `users`
     (`lastName`, `firstName`, `email`, `phone`, `password`, `role`)
 VALUES
-    ('Doe', 'John', 'john@mail.com', '1234567890', '$2y$10$4lcQorRRI2pC.QU3Qwj/zeq8hSQMyad6MRCTiEsTxIj8SX4t30AbC', 'ROLE_USER'),
-    ('Dupont', 'Pierre', 'pierre@mail.com', '1234567890', '$2y$10$4lcQorRRI2pC.QU3Qwj/zeq8hSQMyad6MRCTiEsTxIj8SX4t30AbC', 'ROLE_MODER'),
-    ('Giraud', 'Philippe', 'phgiraud@cogitium.com', '1234567890', '$2y$10$4lcQorRRI2pC.QU3Qwj/zeq8hSQMyad6MRCTiEsTxIj8SX4t30AbC', 'ROLE_ADMIN');
+    ('Doe', 'John', 'user@mail.com', '1234567890', '$2y$10$4lcQorRRI2pC.QU3Qwj/zeq8hSQMyad6MRCTiEsTxIj8SX4t30AbC', 'ROLE_USER'),
+    ('Dupont', 'Pierre', 'moderateur@mail.com', '1234567890', '$2y$10$4lcQorRRI2pC.QU3Qwj/zeq8hSQMyad6MRCTiEsTxIj8SX4t30AbC', 'ROLE_MODER'),
+    ('Giraud', 'Philippe', 'admin@mail.com', '1234567890', '$2y$10$4lcQorRRI2pC.QU3Qwj/zeq8hSQMyad6MRCTiEsTxIj8SX4t30AbC', 'ROLE_ADMIN');
 
 INSERT INTO categories
     (name, slug, id_categories)
