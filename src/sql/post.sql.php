@@ -50,3 +50,29 @@ function getOnePost($slug) {
         die("Erreur SQL : " . $e->getMessage());
     }
 }
+
+function addPost($post, $today, $slug, $id_users) {
+    global $pdo;
+
+    try {
+        $query = 
+        "INSERT INTO `posts`
+            (`title`, `content`, `createdAt`, `updatedAt`, `image`, `active`, `slug`, `id_users`, `id_categories`)
+        VALUES
+            (:title, :content, '$today', '$today', :image, FALSE, :slug, $id_users, :id_categories)";
+        //die($query);
+
+        $cursor = $pdo->prepare($query);
+        $cursor->bindParam(':title', $post['title'], PDO::PARAM_STR);
+        $cursor->bindParam(':content', $post['content'], PDO::PARAM_STR);
+        $cursor->bindParam(':image', $post['image'], PDO::PARAM_STR);
+        $cursor->bindParam(':slug', $slug, PDO::PARAM_STR);
+        $cursor->bindParam(':id_categories', $post['id_categories'], PDO::PARAM_INT);
+        $cursor->execute();
+        
+        return TRUE;
+    } catch (PDOException $e) {
+        die("Erreur SQL : " . $e->getMessage());
+        return FALSE;
+    }
+}

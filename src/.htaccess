@@ -1,6 +1,6 @@
 # Activation de la Réecriture des URLs
 RewriteEngine On
-#RewriteBase /formation/m2i/CdaCergy2024/blog/src/
+# RewriteBase /formation/m2i/CdaCergy2024/blog/src
 # RewriteBase /   
 
 # Exclusions

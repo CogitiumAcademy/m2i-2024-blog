@@ -13,6 +13,7 @@ $pdo = pdoConnect();
 require 'core/core.inc.php';
 require 'lib/pluralize.lib.php';
 require 'lib/flash.lib.php';
+require 'lib/slugger.lib.php';
 
 // Router
 $page = DEFAULT_PAGE;

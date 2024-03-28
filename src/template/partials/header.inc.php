@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
+        <?php define('BASE_DIR', "http://" . $_SERVER["HTTP_HOST"] . ((dirname($_SERVER['SCRIPT_NAME']) != '/') ? dirname($_SERVER['SCRIPT_NAME']) : '')); ?>
+        <base href="<?php echo BASE_DIR; ?>/" >
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="<?= $layoutDescription ?>" />
@@ -32,6 +34,7 @@
                         <?php if (!isset($_SESSION['user'])) { ?>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="?page=login">Login</a></li>
                         <?php } else { ?>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="?page=addpost">Proposer un article</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="?page=logout">Logout</a></li>
                         <?php } ?>
                         
