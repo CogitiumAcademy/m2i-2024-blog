@@ -1,5 +1,7 @@
 <?php
 
+// by ChatGPT ;)
+
 function pluralize($singular, $count) {
     if ($count !== 1) {
         // Ajoute 's' à la fin du mot pour le pluriel

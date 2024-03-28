@@ -23,7 +23,7 @@
 
                                 <!-- Submit Button-->
                                 <button class="btn btn-primary text-uppercase" id="submitButton" type="submit">Me connecter</button>
-                                <a href="?page=register" class="btn btn-primary">Créer un compte</a>
+                                <a href="?page=register" class="btn btn-primary">M'INSCRIRE</a>
                             </form>
                         </div>
                     </div>

@@ -5,7 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $hashPassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
     $_POST['password'] = $hashPassword;
     $isRegistered = registerUser($_POST);
-    set_flash_message('blog', 'Inscription réussie','success');
+    set_flash_message('blog', 'Inscription réussie !','success');
     header('Location: index.php');
     exit;
 }

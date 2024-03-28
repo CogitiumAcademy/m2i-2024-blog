@@ -10,11 +10,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['user'] = $user;
         //var_dump($_SESSION); exit;
         //die('OK');
+        set_flash_message('blog', 'Vous êtes connecté !','success');
         header('Location: index.php');
         exit;
     
     }
     //die('NOK');
+    set_flash_message('blog', 'Vérifiez vos identifiants !','danger');
     header('Location: index.php?page=login');
     exit;
 }
