@@ -2,6 +2,8 @@
 require 'sql/category.sql.php';
 require 'sql/post.sql.php';
 
+Granted();
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     //var_dump($_POST); exit;
 
