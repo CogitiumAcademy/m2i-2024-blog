@@ -4,7 +4,7 @@
         <!-- Main Content-->
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
-                <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="col-md-10 col-lg-8 col-xl-8">
                     
                     <?php foreach ($posts as $post) { ?>
                     
@@ -33,8 +33,34 @@
                     <?php } ?>
 
                     <!-- Pager-->
-                    <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">Older Posts →</a></div>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
 
+                            <?php for ($i=1; $i<=$nbPages; $i++) { ?>
+                            <li class="page-item"><a class="page-link" href="?p=<?= $i ?>"><?= $i ?></a></li>
+                            <?php } ?>
+                            
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                </div>
+                <div class="col-md-2 col-lg-4 col-xl-4 border">
+                    <h2>Catégories</h2>
+                    <div class="list-group">
+                        <?php foreach ($categories as $category) { ?>
+                            <a href="?page=category&slug=<?= $category['slug'] ?>" class="list-group-item list-group-item-action"><?= $category['name'] ?></a>
+                        <?php } ?>
+                    </div>
                 </div>
             </div>
         </div>

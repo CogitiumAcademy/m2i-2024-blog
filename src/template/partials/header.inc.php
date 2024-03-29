@@ -44,7 +44,16 @@
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="?page=profil">(<?= $_SESSION['user']['firstName']?>)</a></li>
                         <?php } ?>
 
-
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle px-lg-3 py-3 py-lg-4" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Catégories
+                            </a>
+                            <ul class="dropdown-menu">
+                                <?php foreach ($categories as $category) { ?>
+                                <li><a class="dropdown-item" href="?page=category&slug=<?= $category['slug'] ?>"><?= $category['name'] ?></a></li>
+                                <?php } ?>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>

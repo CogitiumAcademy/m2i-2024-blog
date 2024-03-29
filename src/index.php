@@ -15,6 +15,9 @@ require 'lib/pluralize.lib.php';
 require 'lib/flash.lib.php';
 require 'lib/slugger.lib.php';
 
+require 'sql/category.sql.php';
+$categories = getAllCategories();
+
 // Router
 $page = DEFAULT_PAGE;
 

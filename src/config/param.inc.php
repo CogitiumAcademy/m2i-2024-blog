@@ -22,7 +22,7 @@ $options = array(
 );
 
 // Pagination par défaut
-define('NB_PAGINATE', 10);
+define('NB_PAGINATE', 2);
 
 // Nom du site
 define('SITE_NAME', 'SurfBlog');

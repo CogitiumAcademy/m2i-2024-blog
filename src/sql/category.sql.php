@@ -1,10 +1,11 @@
 <?php
+
 function getAllCategories() {
     global $pdo;
 
     try {
         $query = 
-        "SELECT `id`, `name`
+        "SELECT *
         FROM categories
         ORDER BY name ASC";
 

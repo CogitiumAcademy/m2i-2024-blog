@@ -1,7 +1,12 @@
 <?php
 
-function getAllPosts() {
+function getAllPosts($p = 1) {
+    // $p = le numéro de la page demandée pour la pagination
+
     global $pdo;
+
+    // Calcul de l'offset pour la pagination
+    $offset = ($p - 1) * NB_PAGINATE;
 
     try {
         $query = 
@@ -16,9 +21,37 @@ function getAllPosts() {
         WHERE active = TRUE
         GROUP BY A.id
         ORDER BY updatedAt DESC
-        LIMIT " . NB_PAGINATE;
+        LIMIT " . $offset . "," . NB_PAGINATE;
 
         $cursor = $pdo->query($query);
+        $posts = $cursor->fetchAll();
+        return $posts;
+    } catch (PDOException $e) {
+        die("Erreur SQL : " . $e->getMessage());
+    }
+}
+
+function getPostsByCategory($slug) {
+    global $pdo;
+
+    try {
+        $query = 
+        "SELECT 
+            `image`, `updatedAt`, `title`, A.`slug` AS postSlug, 
+            LEFT(A.`content`, 150) AS content, 
+            COUNT(D.`id`) AS nbComments
+        FROM posts A
+        INNER JOIN categories B ON A.id_categories = B.id
+        -- INNER JOIN users C ON id_users = C.id
+        LEFT JOIN comments D ON D.id_posts = A.id
+        WHERE active = TRUE
+            AND B.slug = :slug
+        GROUP BY A.id
+        ORDER BY updatedAt DESC";
+
+        $cursor = $pdo->prepare($query);
+        $cursor->bindValue(':slug', $slug, PDO::PARAM_STR);
+        $cursor->execute();
         $posts = $cursor->fetchAll();
         return $posts;
     } catch (PDOException $e) {
@@ -74,5 +107,22 @@ function addPost($post, $today, $slug, $id_users) {
     } catch (PDOException $e) {
         die("Erreur SQL : " . $e->getMessage());
         return FALSE;
+    }
+}
+
+function nbPosts() {
+    global $pdo;
+
+    try {
+        $query = 
+        "SELECT count(*) AS nbPosts
+        FROM posts
+        WHERE active = TRUE";
+
+        $cursor = $pdo->query($query);
+        $nbPosts = $cursor->fetch();
+        return $nbPosts['nbPosts'];
+    } catch (PDOException $e) {
+        die("Erreur SQL : " . $e->getMessage());
     }
 }
