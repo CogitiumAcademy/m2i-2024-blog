@@ -1,5 +1,5 @@
 <?php
-require 'sql/category.sql.php';
+//require 'sql/category.sql.php';
 require 'sql/post.sql.php';
 
 Granted();
