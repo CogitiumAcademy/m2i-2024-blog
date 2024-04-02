@@ -27,3 +27,5 @@ define('NB_PAGINATE', 2);
 // Nom du site
 define('SITE_NAME', 'SurfBlog');
 define('SITE_SLOGAN', 'Le meilleur blog du monde !');
+
+define('ENV', 'PROD');
