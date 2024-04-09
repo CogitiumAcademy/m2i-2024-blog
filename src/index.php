@@ -15,10 +15,11 @@ require 'lib/pluralize.lib.php';
 require 'lib/flash.lib.php';
 require 'lib/slugger.lib.php';
 
+// Préchargement de la liste des catégories pour la sidebar
 require 'sql/category.sql.php';
 $categories = getAllCategories();
 
-// Router
+/************** Begin Router **************/ 
 $page = DEFAULT_PAGE;
 
 if (isset($_GET['page'])) {
@@ -32,8 +33,18 @@ if (file_exists($url)) {
 } else {
     echo "404 File Not Found !!!";
 }
+/************** End Router **************/ 
 
+// Profiler (version simplifiée)
 if (ENV == 'DEV') {
-    echo "<h2>Debug SESSION</h2>";
+    echo '<h2>Debug $_SESSION</h2>';
     var_dump($_SESSION);
+    echo '<h2>Debug $_REQUEST</h2>';
+    var_dump($_REQUEST);
+    echo '<h2>Debug $_COOKIE</h2>';
+    var_dump($_COOKIE);
+    echo '<h2>Debug $_ENV</h2>';
+    var_dump($_ENV);
+    echo '<h2>Debug $_SERVER</h2>';
+    var_dump($_SERVER);
 }

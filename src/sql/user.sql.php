@@ -79,7 +79,8 @@ function updateUser($user) {
         $cursor->bindParam(':id', $_SESSION['user']['id'], PDO::PARAM_INT);
         $cursor->bindParam(':lastName', $user['lastName'], PDO::PARAM_STR);
         $cursor->bindParam(':firstName', $user['firstName'], PDO::PARAM_STR);
-        $cursor->bindParam(':phone', $user['phone'], PDO::PARAM_STR);        $cursor->execute();
+        $cursor->bindParam(':phone', $user['phone'], PDO::PARAM_STR);
+        $cursor->execute();
         
         return TRUE;
     } catch (PDOException $e) {

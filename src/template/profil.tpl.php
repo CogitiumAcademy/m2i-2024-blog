@@ -33,6 +33,7 @@
 
                                 <!-- Submit Button-->
                                 <button class="btn btn-primary text-uppercase" id="submitButton" type="submit">Enregistrer</button>
+                                <a href="?page=password" class="btn btn-primary">Modifier mon mot de passe</a>
                             </form>
                         </div>
                     </div>

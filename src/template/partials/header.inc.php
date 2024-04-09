@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <?php define('BASE_DIR', "http://" . $_SERVER["HTTP_HOST"] . ((dirname($_SERVER['SCRIPT_NAME']) != '/') ? dirname($_SERVER['SCRIPT_NAME']) : '')); ?>
+        <!---------- Pour l'URL rewriting ---------->
+        <?php define('BASE_DIR', $_SERVER["REQUEST_SCHEME"] . "://" . $_SERVER["HTTP_HOST"] . ((dirname($_SERVER['SCRIPT_NAME']) != '/') ? dirname($_SERVER['SCRIPT_NAME']) : '')); ?>
         <base href="<?php echo BASE_DIR; ?>/" >
+        <!-------------(voir .htaccess))------------>
+        
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="<?= $layoutDescription ?>" />
@@ -42,6 +45,11 @@
                         
                         <?php if (isset($_SESSION['user'])) { ?>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="?page=profil">(<?= $_SESSION['user']['firstName']?>)</a></li>
+
+                            <?php if ($_SESSION['user']['role'] == 'ROLE_MODER') { ?>
+                                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="?page=moder">Modération</a></li>
+                            <?php } ?>
+
                         <?php } ?>
 
                         <li class="nav-item dropdown">
