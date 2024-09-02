@@ -13,6 +13,10 @@ if ($post != false) {
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $today = date("Y-m-d H:i:s");
+
+        // Protection XSS
+        $_POST["comment"] = htmlspecialchars($_POST["comment"], ENT_QUOTES);
+        
         $isInserted = addComment($_SESSION['user']['id'], $post['id'], $_POST['comment'], $today);
         if ($isInserted) {
             set_flash_message('blog', 'Merci pour votre commentaire !','success');
