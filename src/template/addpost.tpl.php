@@ -9,7 +9,7 @@
                         <h2>Votre article</h2>
                         <div class="my-5">
                             <form id="contactForm" action="?page=addpost" method="post">
-
+                                <input type="hidden" name="token" value="<?= $_SESSION["token"] ?>">
                                 <div class="form-floating">
                                     <input name="title" class="form-control" id="firstName" type="text">
                                     <label for="title">Titre</label>

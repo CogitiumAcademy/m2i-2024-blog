@@ -15,7 +15,7 @@
                         <h4 class="post-title"><?= $post['title'] ?></h4>
                         <img class="w-25" src="<?= $post['image'] ?>" alt="">
                         <a href="?page=moder&action=activate&id=<?= $post['id'] ?>" class="btn btn-primary">Activer</a>
-                        <a href="?page=moder&action=delete&id=<?= $post['id'] ?>" class="btn btn-danger" onclick="return confirm('Confirmation ?')">Supprimer</a>
+                        <a href="?page=moder&action=delete&id=<?= $post['id'] ?>&token=<?= $_SESSION["token"] ?>" class="btn btn-danger" onclick="return confirm('Confirmation ?')">Supprimer</a>
                         <p class="post-subtitle"><?= $post['content'] ?>...</p>
                         <p class="post-meta">
                             <?= $post['updatedAt'] ?>

@@ -2,6 +2,11 @@
 // Initialisation de le session
 session_start();
 
+if (!isset($_SESSION["token"])) {
+    $token = bin2hex(openssl_random_pseudo_bytes(6));
+    $_SESSION["token"] = $token;
+}
+
 // Chargement des paramètre du site
 require 'config/param.inc.php';
 

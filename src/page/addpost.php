@@ -7,6 +7,15 @@ Granted();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     //var_dump($_POST); exit;
 
+    if (!isset($_POST["token"])) {
+        echo '<h2>Le token est absent !</h2>';
+        exit;
+    } 
+    if ($_POST["token"] != $_SESSION["token"]) {
+        echo '<h2>Le token est invalide !</h2>';
+        exit;
+    }
+
     $today = date("Y-m-d H:i:s");
     $slug = slug($_POST['title']);
 

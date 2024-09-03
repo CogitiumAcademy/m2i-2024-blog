@@ -16,6 +16,7 @@ if (!isset($_SESSION['user'])) {
 
 require 'sql/moder.sql.php';
 
+
 // Si une action est demandée
 if (isset($_GET['action'])) {
 
@@ -26,6 +27,15 @@ if (isset($_GET['action'])) {
         exit;
     }
 
+    if (!isset($_GET["token"])) {
+        echo '<h2>Le token est absent !</h2>';
+        exit;
+    } 
+    if ($_GET["token"] != $_SESSION["token"]) {
+        echo '<h2>Le token est invalide !</h2>';
+        exit;
+    }
+    
     // Si demande d'activation
     if ($_GET['action'] == 'activate') {
         $isActivated = activatePostById($_GET['id']);
